@@ -35,6 +35,8 @@ function F2L() {
 
 let localCurrency;
 function L2F() {
+    exchangeRate = document.querySelector('#exchangeRate').value;
+
     localCurrency = document.querySelector('#localCurrency').value;
 
     let soYouNeed = (localCurrency * exchangeRate);
