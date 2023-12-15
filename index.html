@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal Calculator</title>
+</head>
+<body>
+    
+    <div id="foodPrice">
+        <h1>food price per kg calculator</h1>
+       <form action="" id="food">
+        <input type="number" name="weight" id="weight" placeholder="weight" onkeyup="foodPrice()">
+        <input type="number" name="price" id="price" placeholder="price" onkeyup="foodPrice()">
+        <p id="foodPriceResult">Per kg: 0</p>
+       </form>
+    </div>
+
+
+    <div id="TilesToSize">
+        <h1>Home size calculator</h1>
+       <form action="" id="Tiles">
+        <input type="number" name="tilesSize" id="tilesSize" placeholder="Tiles size" onkeyup="TilesToSize()">
+
+        <input type="number" name="xRow" id="xRow" placeholder="Tiles count in X" onkeyup="TilesToSize()">
+
+        <input type="number" name="yColumn" id="yColumn" placeholder="Tiles count in Y" onkeyup="TilesToSize()">
+        <p id="homeSize">Home size: 0</p>
+       </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
