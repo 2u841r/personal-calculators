@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My personal Calculator</title>
 </head>
+
 <body>
-    
+
     <div id="foodPrice">
-        <h1>food price per kg calculator</h1>
-       <form action="" id="food">
-        <input type="number" name="weight" id="weight" placeholder="weight" onkeyup="foodPrice()">
-        <input type="number" name="price" id="price" placeholder="price" onkeyup="foodPrice()">
-        <p id="foodPriceResult">Per kg: 0</p>
-       </form>
+        <h2>Food price per kg calculator</h2>
+        <form action="" id="food">
+            <div>
+                <label for="weight">Grams</label>
+                <input type="number" name="weight" id="weight" placeholder="weight" onkeyup="foodPrice()">
+            </div>
+           
+            <div>
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" placeholder="price" onkeyup="foodPrice()">
+            </div>
+            <p id="foodPriceResult">Per kg: 0</p>
+        </form>
     </div>
 
 
     <div id="TilesToSize">
-        <h1>Home size calculator</h1>
-       <form action="" id="Tiles">
-        <input type="number" name="tilesSize" id="tilesSize" placeholder="Tiles size" onkeyup="TilesToSize()">
+        <h2>Home size calculator</h2>
+        <form action="" id="Tiles">
+            <div>
+                <label for="tilesSize">Tiles Size in Inch</label>
+                <input type="number" name="tilesSize" id="tilesSize" placeholder="Tiles size" onkeyup="TilesToSize()">
+            </div>
 
-        <input type="number" name="xRow" id="xRow" placeholder="Tiles count in X" onkeyup="TilesToSize()">
+            <div>
+                <label for="xRow">Tile Count in X</label>
+                <input type="number" name="xRow" id="xRow" placeholder="Tiles count in X" onkeyup="TilesToSize()">
+            </div>
 
-        <input type="number" name="yColumn" id="yColumn" placeholder="Tiles count in Y" onkeyup="TilesToSize()">
-        <p id="homeSize">Home size: 0</p>
-       </form>
+            <div>
+                <label for="xRow">Tile Count in Y</label>
+                <input type="number" name="yColumn" id="yColumn" placeholder="Tiles count in Y" onkeyup="TilesToSize()">
+            </div>
+            <p id="homeSize">Home size: 0</p>
+        </form>
     </div>
+
+
+    <div id="currency">
+        <h2>Foreign Currency Exchange Calculator</h2>
+        <p>this is for calculate how many your local currency need for get your expected currency</p>
+        <form action="" id="currencyConvert">
+            <div>
+                <label for="exchangeRate">Exchange Rate</label>
+                <input type="number" name="exchangeRate" id="exchangeRate">
+            </div>
+
+            <div>
+                <label for="foreignCurrency">Foreign currency</label>
+                <input type="number" name="foreignCurrency" id="foreignCurrency" onkeyup="F2L()">
+            </div>
+
+            <div>
+                <label for="localCurrency">Local currency</label>
+                <input type="number" name="localCurrency" id="localCurrency" onkeyup="L2F()">
+            </div>
+        
+        </form>
+    </div>
+
+
+
+
 
     <script src="index.js"></script>
 </body>
+
 </html>
