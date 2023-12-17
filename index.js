@@ -45,3 +45,52 @@ function L2F() {
 
 }
 
+
+
+
+let selectedRadio;
+document.addEventListener('DOMContentLoaded', function () {
+    let form = document.getElementById('myForm');
+
+    form.addEventListener('change', function () {
+        selectedRadio = document.querySelector('input[name="occasion"]:checked').id;
+
+        function timeUntil(targetDate) {
+            const targetTime = new Date(targetDate).getTime();
+
+            const currentTime = new Date().getTime();
+
+            const timeDifference = targetTime - currentTime;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            return {
+                days,
+                hours,
+                minutes
+            };
+        }
+
+        const targetDates = {
+            newYear: "2024-01-01T00:00:00",
+            ramadan: "2024-03-11T18:00:00"
+        };
+
+        const remainingTime = timeUntil(targetDates[selectedRadio]);
+
+        const result = `${remainingTime.days} days, ${remainingTime.hours} hours, and ${remainingTime.minutes} minutes remaining.`;
+
+        let resultElement = document.getElementById('resultText');
+
+        resultElement.textContent = result;
+
+
+    });
+
+    form.dispatchEvent(new Event('change'));
+
+});
+
+

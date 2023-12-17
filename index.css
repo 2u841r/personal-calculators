@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bodyCss {
+    display: grid;
+    grid-template-columns: auto;
+
+}
+
+.column1 {
+    background-color: palevioletred;
+    padding: 1rem;
+}
+
+.column2 {
+    background-color: royalblue;
+    padding: 1rem;
+}
+
+.column3 {
+    background-color: #50c878;
+    padding: 1rem;
+}
+
+.column4 {
+    background-color: rgb(223, 223, 79);
+    padding: 1rem;
+}
+
+
+
+@media screen and (min-width: 568px) {
+    .bodyCss {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 1rem;
+
+    }
+
+}
+
+@media screen and (min-width: 999px) {
+    .bodyCss {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin: 1rem;
+
+    }
+
+}

@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My personal Calculator</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
+<body class="bodyCss">
 
-    <div id="foodPrice">
+    <div class="column1" id="foodPrice">
         <h2>Food price per kg calculator</h2>
+        <br />
         <form action="" id="food">
             <div>
                 <label for="weight">Grams</label>
                 <input type="number" name="weight" id="weight" placeholder="weight" onkeyup="foodPrice()">
             </div>
-           
+
             <div>
                 <label for="price">Price</label>
                 <input type="number" name="price" id="price" placeholder="price" onkeyup="foodPrice()">
             </div>
+            <br />
             <p id="foodPriceResult">Per kg: 0</p>
         </form>
     </div>
 
 
-    <div id="TilesToSize">
+    <div class="column2" id="TilesToSize">
         <h2>Home size calculator</h2>
         <form action="" id="Tiles">
             <div>
@@ -48,13 +51,16 @@
     </div>
 
 
-    <div id="currency">
-        <h2>Foreign Currency Exchange Calculator</h2>
-        <p>this is for calculate how many your local currency need for get your expected currency</p>
+    <div class="column3" id="currency">
+        <h2> Foreign Currency Exchange Calculator</h2>
+        <h3><abbr title="this is for calculate how many your local currency need for get your expected currency"> usage
+            </abbr></h3>
+
         <form action="" id="currencyConvert">
             <div>
                 <label for="exchangeRate">Exchange Rate</label>
                 <input type="number" name="exchangeRate" id="exchangeRate">
+
             </div>
 
             <div>
@@ -66,12 +72,27 @@
                 <label for="localCurrency">Local currency</label>
                 <input type="number" name="localCurrency" id="localCurrency" onkeyup="L2F()">
             </div>
-        
+
         </form>
     </div>
 
 
+    <div class="column4">
+        <h2>Until this Event</h2>
+        <br />
+        <form action="" id="myForm">
+            <div>
+                <input type="radio" name="occasion" id="newYear" checked>
+                <label for="newYear">New Year</label>
+            </div>
 
+            <div>
+                <input type="radio" name="occasion" id="ramadan">
+                <label for="ramadan">Ramadan</label>
+            </div>
+        </form>
+        <p id="result">Result: <span id="resultText"></span></p>
+    </div>
 
 
     <script src="index.js"></script>
