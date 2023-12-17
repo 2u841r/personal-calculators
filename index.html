@@ -11,7 +11,7 @@
 <body class="bodyCss">
 
     <div class="column1" id="foodPrice">
-        <h2>Food price per kg calculator</h2>
+        <h2>Food price per kg</h2>
         <br />
         <form action="" id="food">
             <div>
@@ -30,7 +30,7 @@
 
 
     <div class="column2" id="TilesToSize">
-        <h2>Home size calculator</h2>
+        <h2>Home size</h2>
         <form action="" id="Tiles">
             <div>
                 <label for="tilesSize">Tiles Size in Inch</label>
@@ -46,15 +46,17 @@
                 <label for="xRow">Tile Count in Y</label>
                 <input type="number" name="yColumn" id="yColumn" placeholder="Tiles count in Y" onkeyup="TilesToSize()">
             </div>
+            <br />
             <p id="homeSize">Home size: 0</p>
         </form>
     </div>
 
 
     <div class="column3" id="currency">
-        <h2> Foreign Currency Exchange Calculator</h2>
-        <h3><abbr title="this is for calculate how many your local currency need for get your expected currency"> usage
-            </abbr></h3>
+        <h2> Foreign Currency Exchange </h2>
+        <div class="tooltip">❓
+            <span class="tooltiptext">Search google 'BDT to USD' (Your local currency to foreign currency) and copy the number from 'foreign currency' field and paste it in 'exchange rate' field. For example, BDT to USD result is '1 Bangladeshi Taka equals 0.0090 United States Dollar' </span>
+          </div>     
 
         <form action="" id="currencyConvert">
             <div>
