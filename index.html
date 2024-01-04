@@ -61,7 +61,7 @@
         <form action="" id="currencyConvert">
             <div>
                 <label for="exchangeRate">Exchange Rate</label>
-                <input type="number" name="exchangeRate" id="exchangeRate">
+                <input type="number" name="exchangeRate" id="exchangeRate" onkeyup="F2L()">
 
             </div>
 
@@ -75,25 +75,85 @@
                 <input type="number" name="localCurrency" id="localCurrency" onkeyup="L2F()">
             </div>
 
+            <div class="tooltip"> another way
+                ℹ️
+                <span class="tooltiptext"> in this method, you just enter 2 things. 
+                    (1) 100 foreign currency equal to how many local currency and 
+                    (2) how many local currency you want to convert. 
+                    result is how much foreign currency you will get
+                </span>
+              </div>     
+            <div>
+                <label for="fc100">100 FC price in your LC</label>
+                <input type="number" name="fc100" id="fc100" onkeyup="fx100()">
+
+            </div>
+
+            <div>
+                <label for="IhaveLC">How many Local Currency you want to convert</label>
+                <input type="number" name="IhaveLC" id="IhaveLC" onkeyup="fx100()">
+            </div>
+
+            <p>You will get <span id="YouWillGet"></span></p>
         </form>
     </div>
 
 
     <div class="column4">
-        <h2>Until this Event</h2>
+        <h2>Countdown</h2>
         <br />
         <form action="" id="myForm">
             <div>
                 <input type="radio" name="occasion" id="newYear" checked>
-                <label for="newYear">New Year</label>
+                <label for="newYear">Someones Birthday</label>
             </div>
 
             <div>
                 <input type="radio" name="occasion" id="ramadan">
                 <label for="ramadan">Ramadan</label>
             </div>
+
+            
+            <div>
+                <input type="radio" name="occasion" id="eid" checked>
+                <label for="eid">Eid</label>
+            </div>
+
+            <div>
+                <input type="radio" name="occasion" id="mdbd">
+                <label for="mdbd">Another Birthday</label>
+            </div>
+
         </form>
-        <p id="result">Result: <span id="resultText"></span></p>
+        <br />
+        <p id="result"> <span id="resultText"></span></p>
+    </div>
+
+
+
+
+    <div class="column5">
+        <h2>Investment Calculator</h2>
+        <br />
+        <form action="" onsubmit="invest()">
+            <div>
+                <label for="Iprice">Price</label>
+                <input type="number" id="initialPrice" name="initialPrice"> 
+            </div>
+            <div>
+                <label for="unit">Unit</label>
+                <input type="number" name="unit" id="unit">
+            </div>
+            <div>
+                <label for="currentPrice">Current price</label>
+                <input type="text" id="currentPrice" name="currentPrice">
+            </div>
+            <button type="submit">Check </button>
+            <br/>
+        </form>
+
+        <p id="investResult"></p>
+
     </div>
 
 

@@ -26,11 +26,11 @@ function F2L() {
 
     foreignCurrency = document.querySelector('#foreignCurrency').value;
 
-    let soYouNeed = (1 / exchangeRate * foreignCurrency);
+    if(foreignCurrency){
+        let soYouNeed = (1 / exchangeRate * foreignCurrency).toFixed(2);
 
-    document.querySelector('#localCurrency').value = `${soYouNeed}`
-
-
+        document.querySelector('#localCurrency').value = `${soYouNeed}`
+    }
 }
 
 let localCurrency;
@@ -39,13 +39,22 @@ function L2F() {
 
     localCurrency = document.querySelector('#localCurrency').value;
 
-    let soYouNeed = (localCurrency * exchangeRate);
+    let soYouNeed = (localCurrency * exchangeRate).toFixed(2);
 
     document.querySelector('#foreignCurrency').value = `${soYouNeed}`
 
 }
 
 
+
+let fc100;
+let ihave; 
+function fx100(){
+    fc100 = document.querySelector('#fc100').value;
+    ihave = document.querySelector('#IhaveLC').value;
+   document.querySelector('#YouWillGet').innerHTML = (ihave / (fc100/100)).toFixed(2)
+    
+}
 
 
 let selectedRadio;
@@ -74,8 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const targetDates = {
-            newYear: "2024-01-01T00:00:00",
-            ramadan: "2024-03-11T18:00:00"
+            newYear: "2024-02-26T00:00:00",
+            ramadan: "2024-03-11T18:00:00",
+            eid: "2024-04-09T18:00:00",
+            mdbd: "2024-04-17T18:00:00" 
         };
 
         const remainingTime = timeUntil(targetDates[selectedRadio]);
@@ -92,5 +103,35 @@ document.addEventListener('DOMContentLoaded', function () {
     form.dispatchEvent(new Event('change'));
 
 });
+
+
+function invest(){
+    event.preventDefault()
+    const initialPrice = document.querySelector('#initialPrice').value;
+    const unit = document.querySelector('#unit').value;
+    const currentprice = document.querySelector('#currentPrice').value;
+    let totalInvest = (initialPrice * unit)
+    let currentStatus = (currentprice * unit)
+    let finalResult = currentStatus - totalInvest;
+    let fulltext = ''
+    if (finalResult < 0) {
+        fulltext = `<p style='color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: 10px;
+        border-radius: 5px;'>
+        Your in in loss of ${finalResult} </p>`
+    } else {
+        fulltext = `<p style='color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        padding: 10px;
+        border-radius: 5px;'> 
+            You are in Profit of ${finalResult}</p>`;
+    }
+    
+    console.log(finalResult);
+    document.getElementById('investResult').innerHTML = fulltext;
+}
 
 
