@@ -1,7 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    cursor: url('./cur2.png'), auto; 
 }
+
+
+
 
 .bodyCss {
     display: grid;
@@ -34,6 +38,10 @@
     padding: 1rem;
 }
 
+#investCheck{
+    border: none;
+    padding: 0.2rem;
+}
 
 
 

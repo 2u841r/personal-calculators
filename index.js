@@ -1,3 +1,5 @@
+// Food price 
+
 function foodPrice() {
     let weight = document.querySelector('#weight').value
     let price = document.querySelector('#price').value
@@ -7,6 +9,42 @@ function foodPrice() {
 
 }
 
+
+
+// Investment 
+
+function invest(){
+    event.preventDefault()
+    const initialPrice = document.querySelector('#initialPrice').value;
+    const unit = document.querySelector('#unit').value;
+    const currentprice = document.querySelector('#currentPrice').value;
+    let totalInvest = (initialPrice * unit)
+    let currentStatus = (currentprice * unit)
+    let finalResult = currentStatus - totalInvest;
+    let fulltext = ''
+    if (finalResult < 0) {
+        fulltext = `<p style='color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: 10px;
+        border-radius: 5px;'>
+        Your in in loss of ${finalResult} </p>`
+    } else {
+        fulltext = `<p style='color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        padding: 10px;
+        border-radius: 5px;'> 
+            You are in Profit of ${finalResult}</p>`;
+    }
+    
+    console.log(finalResult);
+    document.getElementById('investResult').innerHTML = fulltext;
+}
+
+
+
+// Home size
 
 function TilesToSize() {
     let tilesSize = document.querySelector('#tilesSize').value
@@ -18,6 +56,10 @@ function TilesToSize() {
     document.querySelector('#homeSize').innerHTML = `Home size: ${squareFeet} square feet`
 
 }
+
+
+// Money exchange
+
 
 let exchangeRate;
 let foreignCurrency;
@@ -56,6 +98,10 @@ function fx100(){
     
 }
 
+
+
+
+// CountDown
 
 let selectedRadio;
 document.addEventListener('DOMContentLoaded', function () {
@@ -104,34 +150,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-function invest(){
-    event.preventDefault()
-    const initialPrice = document.querySelector('#initialPrice').value;
-    const unit = document.querySelector('#unit').value;
-    const currentprice = document.querySelector('#currentPrice').value;
-    let totalInvest = (initialPrice * unit)
-    let currentStatus = (currentprice * unit)
-    let finalResult = currentStatus - totalInvest;
-    let fulltext = ''
-    if (finalResult < 0) {
-        fulltext = `<p style='color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;
-        padding: 10px;
-        border-radius: 5px;'>
-        Your in in loss of ${finalResult} </p>`
-    } else {
-        fulltext = `<p style='color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
-        padding: 10px;
-        border-radius: 5px;'> 
-            You are in Profit of ${finalResult}</p>`;
-    }
-    
-    console.log(finalResult);
-    document.getElementById('investResult').innerHTML = fulltext;
-}
 
 

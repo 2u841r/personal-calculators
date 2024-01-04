@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My personal Calculator</title>
     <link rel="stylesheet" href="./index.css">
+
+
 </head>
 
 <body class="bodyCss">
@@ -29,8 +31,34 @@
     </div>
 
 
+
+    <div class="column5">
+        <h2>Investment Calculator</h2>
+        <br />
+        <form action="" onsubmit="invest()">
+            <div>
+                <label for="Iprice">Price</label>
+                <input type="number" id="initialPrice" name="initialPrice"> 
+            </div>
+            <div>
+                <label for="unit">Unit</label>
+                <input type="number" name="unit" id="unit">
+            </div>
+            <div>
+                <label for="currentPrice">Current price</label>
+                <input type="text" id="currentPrice" name="currentPrice">
+            </div>
+            <button type="submit" id="investCheck">Check </button>
+            <br/>
+        </form>
+
+        <p id="investResult"></p>
+
+    </div>
+
     <div class="column2" id="TilesToSize">
         <h2>Home size</h2>
+        <br />
         <form action="" id="Tiles">
             <div>
                 <label for="tilesSize">Tiles Size in Inch</label>
@@ -74,8 +102,8 @@
                 <label for="localCurrency">Local currency</label>
                 <input type="number" name="localCurrency" id="localCurrency" onkeyup="L2F()">
             </div>
-
-            <div class="tooltip"> another way
+            <br />
+            <div class="tooltip"> Another way
                 ℹ️
                 <span class="tooltiptext"> in this method, you just enter 2 things. 
                     (1) 100 foreign currency equal to how many local currency and 
@@ -84,13 +112,15 @@
                 </span>
               </div>     
             <div>
-                <label for="fc100">100 FC price in your LC</label>
+                <label for="fc100">100 Foreign Currency Price</label>
+
                 <input type="number" name="fc100" id="fc100" onkeyup="fx100()">
 
             </div>
 
             <div>
-                <label for="IhaveLC">How many Local Currency you want to convert</label>
+                <label for="IhaveLC">Local Currency I have</label>
+
                 <input type="number" name="IhaveLC" id="IhaveLC" onkeyup="fx100()">
             </div>
 
@@ -129,32 +159,6 @@
         <p id="result"> <span id="resultText"></span></p>
     </div>
 
-
-
-
-    <div class="column5">
-        <h2>Investment Calculator</h2>
-        <br />
-        <form action="" onsubmit="invest()">
-            <div>
-                <label for="Iprice">Price</label>
-                <input type="number" id="initialPrice" name="initialPrice"> 
-            </div>
-            <div>
-                <label for="unit">Unit</label>
-                <input type="number" name="unit" id="unit">
-            </div>
-            <div>
-                <label for="currentPrice">Current price</label>
-                <input type="text" id="currentPrice" name="currentPrice">
-            </div>
-            <button type="submit">Check </button>
-            <br/>
-        </form>
-
-        <p id="investResult"></p>
-
-    </div>
 
 
     <script src="index.js"></script>
