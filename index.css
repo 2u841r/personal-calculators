@@ -4,7 +4,9 @@
     cursor: url('./cur.png'), auto; 
 }
 
-
+input{
+    padding: 0.2rem;
+}
 
 
 .bodyCss {
@@ -38,11 +40,39 @@
     padding: 1rem;
 }
 
-#investCheck{
+.column6{
+    background-color: goldenrod;
+    padding: 1.5rem;
+}
+
+button{
     border: none;
     padding: 0.2rem;
 }
 
+
+
+
+.bad{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#fc100{
+    width: 120px;
+    
+}
+
+.good{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 5px;
+    border-radius: 5px;
+}
 
 
 .tooltip {

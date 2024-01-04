@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My personal Calculator</title>
     <link rel="stylesheet" href="./index.css">
-
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
 </head>
 
@@ -37,18 +37,43 @@
         <br />
         <form action="" onsubmit="invest()">
             <div>
-                <label for="Iprice">Price</label>
-                <input type="number" id="initialPrice" name="initialPrice"> 
+                <label for="Iprice">Unit Price</label>
+                <input type="number" id="initialPrice" name="initialPrice" required placeholder="per pc / per kg price"> 
             </div>
             <div>
-                <label for="unit">Unit</label>
-                <input type="number" name="unit" id="unit">
+                <label for="unit">Quantity</label>
+                <input type="number" name="unit" id="unit" required placeholder="how many in stock?">
             </div>
+            
+
             <div>
-                <label for="currentPrice">Current price</label>
-                <input type="text" id="currentPrice" name="currentPrice">
+                <label for="currentPrice">Current Price</label>
+                <input type="text" id="currentPrice" name="currentPrice" required placeholder="current unit price">
             </div>
-            <button type="submit" id="investCheck">Check </button>
+
+           <div style="display: flex; align-items: center; justify-content: center; margin: 0.3rem;"> 
+            <button style="margin: 0 1rem;" type="submit" id="investCheck">Check </button>
+            <button type="reset" id="investCheck" onclick="clearInput()"> Clear </button>
+            </div>
+            
+            <br />
+
+            <div>
+                <label for="totalInvestment">Total Investment</label>
+                <input type="number" name="totalInvestment" id="totalInvestment" readonly>
+            </div>
+
+
+            <div>
+                <label for="currentValue">Current Value</label>
+                <input type="number" name="currentValue" id="currentValue" readonly>
+            </div>
+
+            <div>
+                <label for="ResultOfInvest">Result Of Invest</label>
+                <input type="text" name="ResultOfInvest" id="ResultOfInvest" readonly>
+            </div>
+
             <br/>
         </form>
 
@@ -65,6 +90,12 @@
                 <input type="number" name="tilesSize" id="tilesSize" placeholder="Tiles size" onkeyup="TilesToSize()">
             </div>
 
+
+            <div>
+                <label for="totaltiles">Tile Count in Total</label>
+                <input type="number" name="totalTiles" id="totalTiles" placeholder="total count of tiles" onkeyup="allTiles()">
+            </div>
+            <p>or feel y and y row </p>
             <div>
                 <label for="xRow">Tile Count in X</label>
                 <input type="number" name="xRow" id="xRow" placeholder="Tiles count in X" onkeyup="TilesToSize()">
@@ -75,7 +106,9 @@
                 <input type="number" name="yColumn" id="yColumn" placeholder="Tiles count in Y" onkeyup="TilesToSize()">
             </div>
             <br />
-            <p id="homeSize">Home size: 0</p>
+            <p id="homeSize" style="color: white;">Home size: 0</p>
+
+
         </form>
     </div>
 
@@ -122,9 +155,14 @@
                 <label for="IhaveLC">Local Currency I have</label>
 
                 <input type="number" name="IhaveLC" id="IhaveLC" onkeyup="fx100()">
+
+                <button style="margin-left: 120px;" type="reset">Clear</button>
             </div>
 
-            <p>You will get <span id="YouWillGet"></span></p>
+            <p>You will get <span id="YouWillGet"></span>   </p>
+
+   
+
         </form>
     </div>
 
@@ -157,6 +195,18 @@
         </form>
         <br />
         <p id="result"> <span id="resultText"></span></p>
+    </div>
+
+
+    <div class="column6">
+        <h1>Islamic Calculator</h1>
+        <ul>
+            <li>Sadaqatul Fitr </li>
+            <li>Aqallu Nisabiz Zakat</li>
+            <li>Mohre Fatemi</li>
+
+        </ul>
+        <p>will be added soon</p>
     </div>
 
 

@@ -13,49 +13,95 @@ function foodPrice() {
 
 // Investment 
 
+let cssAuto; 
 function invest(){
     event.preventDefault()
     const initialPrice = document.querySelector('#initialPrice').value;
     const unit = document.querySelector('#unit').value;
     const currentprice = document.querySelector('#currentPrice').value;
+    let totalInvestment = document.querySelector('#totalInvestment');
+    let ResultOfInvest = document.querySelector('#ResultOfInvest');
+    let currentValueField = document.querySelector('#currentValue');
+    ResultOfInvest.classList.remove(cssAuto)
+
+
     let totalInvest = (initialPrice * unit)
+    totalInvestment.value = totalInvest;
+    totalInvestment.readOnly = true;
     let currentStatus = (currentprice * unit)
+    let currentValue = (unit * currentprice)
     let finalResult = currentStatus - totalInvest;
+    let extraText = finalResult <= 0 ? 'loss' : 'profit'
+    cssAuto = finalResult <= 0 ? 'bad' : 'good'
+
+    ResultOfInvest.value = `${finalResult} ${extraText} `; 
+    currentValueField.value = currentValue; 
     let fulltext = ''
-    if (finalResult < 0) {
-        fulltext = `<p style='color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;
-        padding: 10px;
-        border-radius: 5px;'>
-        Your in in loss of ${finalResult} </p>`
-    } else {
-        fulltext = `<p style='color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
-        padding: 10px;
-        border-radius: 5px;'> 
-            You are in Profit of ${finalResult}</p>`;
-    }
+    // if (finalResult < 0) {
+    //     fulltext = `<p style='color: #721c24;
+    //     background-color: #f8d7da;
+    //     border-color: #f5c6cb;
+    //     padding: 5px;
+    //     border-radius: 5px;'>
+    //     Your in in loss of ${finalResult} </p>`
+    // } else {
+    //     fulltext = `<p style='color: #155724;
+    //     background-color: #d4edda;
+    //     border-color: #c3e6cb;
+    //     padding: 5px;
+    //     border-radius: 5px;'> 
+    //         You are in Profit of ${finalResult}</p>`;
+    // }
     
     console.log(finalResult);
-    document.getElementById('investResult').innerHTML = fulltext;
+
+    const investResult =  document.getElementById('investResult')
+    investResult.innerHTML = fulltext;
+    ResultOfInvest.classList.add(cssAuto)
+
+
 }
+
+function clearInput(){
+    document.getElementById('investResult').innerHTML = ''
+}
+
+
 
 
 
 // Home size
+let xRow = document.querySelector('#xRow')
+let yColumn = document.querySelector('#yColumn')
+let homeSize = document.querySelector('#homeSize'); 
+let tilesSizeField = document.querySelector('#tilesSize')
+let totalField= document.querySelector('#totalTiles')
 
 function TilesToSize() {
-    let tilesSize = document.querySelector('#tilesSize').value
-    let xRow = document.querySelector('#xRow').value
-    let yColumn = document.querySelector('#yColumn').value
-
-
-    let squareFeet = parseInt((tilesSize * tilesSize / 12 / 12 * xRow * yColumn))
-    document.querySelector('#homeSize').innerHTML = `Home size: ${squareFeet} square feet`
+    let tilesSize = tilesSizeField.value
+    let xRowValue = xRow.value
+    let yColumnValue = yColumn.value
+    // ternary operator is best
+    totalField.value = xRowValue * yColumnValue === 0 ? '' : xRowValue * yColumnValue; 
+    let squareFeet = parseInt((tilesSize * tilesSize / 12 / 12 * xRowValue * yColumnValue))
+    homeSize.innerHTML = `Home size: ${squareFeet} square feet`
 
 }
+
+function allTiles(){
+    let tilesSizeValue = tilesSizeField.value
+    let total = totalField.value
+
+    xRow.value = ''
+    yColumn.value = ''
+
+    let squareFeet = parseInt((tilesSizeValue * tilesSizeValue / 12 / 12 * total))
+
+    homeSize.innerHTML = `Home size: ${squareFeet} square feet`
+}
+
+
+
 
 
 // Money exchange
